@@ -1,43 +1,39 @@
-# Hot Export
+# Quick Snap
 
-A Figma plugin for quick exporting of selected layers with customizable settings.
+A Figma plugin for quickly grabbing assets and values with customizable settings.
 
 ## Features
 
 - **One-Click Export**: Export directly to your computer with a single click
 - **Customizable Export Settings**: Change default export format and scale
-- **Export Assets Page**: Option to automatically copy exported assets to a dedicated "Export Assets" page
 
 ## How to Use
 
-### Quick Export from UI
-1. Go to "Plugins > Hot Export > Open Hot Export" to open the plugin panel
+### Export from UI
+1. Go to "Plugins > Quick Snap > Open Panel" to open the plugin panel
 2. Select one or more layers in your Figma document
 3. Adjust settings if needed
-4. Click the "Export Selection" button
+4. Click the "Export" button
 5. The files will be downloaded to your computer automatically
 
-### Quick Export from Menu
+### Snap Export from Menu
 1. Select one or more layers in your Figma document
-2. Right-click and select "Plugins > Hot Export > Quick Export"
+2. Right-click and select "Plugins > Quick Snap > Snap Export"
 3. The files will be downloaded to your computer automatically using your saved settings
 
 ### Setting up Keyboard Shortcuts
 Figma allows you to set up custom keyboard shortcuts for plugin commands:
-1. Go to Figma menu > Preferences > Keyboard Shortcuts
-2. Search for "Hot Export"
-3. Add a keyboard shortcut (like Option+E / Alt+E) for the "Quick Export" command
+1. Navigate to the keyboard shortcut option on your computer
+3. Add a keyboard shortcut (like Command + Option + P) for the desired commands, like "Snap Export"
 
 ### Configure Settings
-1. Open the plugin panel via "Plugins > Hot Export > Open Hot Export"
+1. Open the plugin panel via "Plugins > Quick Snap > Open Panel"
 2. Select your preferred file type (PNG, JPG, SVG, PDF)
 3. Choose your preferred scale (1x, 2x, 3x, 4x)
-4. Toggle the option to copy to "Export Assets" page if desired
-5. Click "Save Settings" to store your preferences for future use
 
 ## How the Export Process Works
 
-When you click "Export Selection" in the plugin:
+When you click "Export" in the plugin:
 1. The plugin applies your selected export settings to the selected layers
 2. The plugin exports each layer and sends the data to your browser
 3. Files are automatically downloaded to your computer's default download location

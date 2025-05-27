@@ -1,5 +1,5 @@
 {
-  "name": "Hot Export",
+  "name": "Quick Snap",
   "id": "1507921587229740644",
   "api": "1.0.0",
   "main": "code.js",
@@ -17,8 +17,8 @@
   },
   "menu": [
     {
-      "name": "Quick Export",
-      "command": "quickExport"
+      "name": "Snap Export",
+      "command": "snapExport"
     },
     {
       "name": "Open Panel",

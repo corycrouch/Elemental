@@ -1,26 +1,26 @@
-// Hot Export Plugin - Quickly export selected layers with customizable settings
+// Quick Snap Plugin - Quickly export selected layers with customizable settings
 
 // Define default settings and types
-interface HotExportSettings {
+interface QuickSnapSettings {
   fileType: string;
   scale: string;
 }
 
 // Default settings
-const DEFAULT_SETTINGS: HotExportSettings = {
+const DEFAULT_SETTINGS: QuickSnapSettings = {
   fileType: 'PNG',
   scale: '2'
 };
 
 // Load saved settings or use defaults
-let settings: HotExportSettings = DEFAULT_SETTINGS;
-let isQuickExportMode = false; // Track if we're in quick export mode vs UI mode
+let settings: QuickSnapSettings = DEFAULT_SETTINGS;
+let isSnapExportMode = false; // Track if we're in snap export mode vs UI mode
 
 // This is the primary entry point for commands (including hotkeys)
 figma.on('run', async (event) => {
     // Load settings first, as all commands might need them
     try {
-        const savedSettings = await figma.clientStorage.getAsync('hotExportSettings');
+        const savedSettings = await figma.clientStorage.getAsync('quickSnapSettings');
         if (savedSettings) {
             settings = JSON.parse(savedSettings as string);
         } else {
@@ -32,12 +32,12 @@ figma.on('run', async (event) => {
     }
 
     // Now, check which command triggered the run event
-    if (event.command === 'quickExport') {
-        // This block runs when the "Quick Export" command (hotkey) is used
-        await performQuickExport();
+    if (event.command === 'snapExport') {
+        // This block runs when the "Snap Export" command (hotkey) is used
+        await performSnapExport();
     } else {
-        // This block runs when the "Open Hot Export" (settings) command is used or no command specified
-        isQuickExportMode = false; // We're in UI mode, not quick export mode
+        // This block runs when the "Open Quick Snap" (settings) command is used or no command specified
+        isSnapExportMode = false; // We're in UI mode, not snap export mode
         
         const panelWidth = 172;
         const panelHeight = 194;
@@ -92,7 +92,7 @@ function setupMessageHandlers() {
     figma.ui.onmessage = async (msg) => {
         if (msg.type === 'save-settings') {
             settings = msg.settings;
-            await figma.clientStorage.setAsync('hotExportSettings', JSON.stringify(settings));
+            await figma.clientStorage.setAsync('quickSnapSettings', JSON.stringify(settings));
             
             // Update Figma's native export settings for selected nodes
             updateNativeExportSettings();
@@ -104,7 +104,7 @@ function setupMessageHandlers() {
         } else if (msg.type === 'export') {
             // This is the message from the UI's 'Export' button
             settings = msg.settings; // Update settings from UI before export
-            await figma.clientStorage.setAsync('hotExportSettings', JSON.stringify(settings)); // Save settings
+            await figma.clientStorage.setAsync('quickSnapSettings', JSON.stringify(settings)); // Save settings
             
             // Update Figma's native export settings for selected nodes
             updateNativeExportSettings();
@@ -113,15 +113,15 @@ function setupMessageHandlers() {
         } else if (msg.type === 'downloadComplete') {
             // Show notification but don't close plugin - let user close manually
             figma.notify(msg.message || 'Export successful!');
-            // Only auto-close if we're in quick export mode
-            if (isQuickExportMode) {
+            // Only auto-close if we're in snap export mode
+            if (isSnapExportMode) {
                 figma.closePlugin();
             }
         } else if (msg.type === 'downloadFailed') {
             figma.notify(msg.message || 'Export failed!', { error: true });
             // Don't close plugin on failure either - let user try again
-            // Only auto-close if we're in quick export mode
-            if (isQuickExportMode) {
+            // Only auto-close if we're in snap export mode
+            if (isSnapExportMode) {
                 figma.closePlugin();
             }
         } else if (msg.type === 'close') {
@@ -290,9 +290,9 @@ async function performExport() {
     }
 }
 
-// Function to handle the quick export command
-async function performQuickExport() {
-    isQuickExportMode = true; // We're in quick export mode
+// Function to handle the snap export command
+async function performSnapExport() {
+    isSnapExportMode = true; // We're in snap export mode
     
     // Initialize with UI hidden, but setup message handlers
     figma.showUI(__html__, { visible: false, width: 0, height: 0 });
