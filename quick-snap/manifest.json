@@ -1,0 +1,28 @@
+{
+  "name": "Hot Export",
+  "id": "1507921587229740644",
+  "api": "1.0.0",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "ui.html",
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  },
+  "menu": [
+    {
+      "name": "Quick Export",
+      "command": "quickExport"
+    },
+    {
+      "name": "Open Panel",
+      "command": "settings"
+    }
+  ]
+}
