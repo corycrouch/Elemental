@@ -1,7 +1,7 @@
 {
-  "name": "Quick-Snap",
+  "name": "Elemental",
   "version": "1.0.0",
-  "description": "Your Figma Plugin",
+  "description": "A Figma plugin for quickly exporting selected layers with customizable settings",
   "main": "code.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
