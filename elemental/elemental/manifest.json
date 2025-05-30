@@ -1,5 +1,5 @@
 {
-  "name": "Elemental",
+  "name": "Hot Export",
   "id": "1507921587229740644",
   "api": "1.0.0",
   "main": "code.js",
@@ -18,7 +18,7 @@
   "menu": [
     {
       "name": "Quick Export",
-      "command": "snapExport"
+      "command": "quickExport"
     },
     {
       "name": "Open Panel",

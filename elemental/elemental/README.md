@@ -1,52 +1,47 @@
-# Elemental
+# Hot Export
 
-A Figma plugin for quickly exporting selected layers with customizable settings.
+A Figma plugin for quick exporting of selected layers with customizable settings.
 
 ## Features
 
-- **Quick Export**: Export selected layers instantly with hotkey support
-- **Customizable Settings**: Choose file format (PNG, JPG, SVG, PDF) and scale (1x-4x)
-- **Copy Fill Colors**: Extract and copy fill colors in various formats (HEX, RGB, RGBA, HSL)
-- **Batch Export**: Export multiple selections as a ZIP file
+- **One-Click Export**: Export directly to your computer with a single click
+- **Customizable Export Settings**: Change default export format and scale
+- **Export Assets Page**: Option to automatically copy exported assets to a dedicated "Export Assets" page
 
-## Usage
+## How to Use
 
-### Panel Mode
-1. Go to "Plugins > Elemental > Open Panel" to open the plugin panel
-2. Select one or more layers in your design
-3. Choose your export settings (format, scale)
-4. Click "Export" to download files
+### Quick Export from UI
+1. Go to "Plugins > Hot Export > Open Hot Export" to open the plugin panel
+2. Select one or more layers in your Figma document
+3. Adjust settings if needed
+4. Click the "Export Selection" button
+5. The files will be downloaded to your computer automatically
 
 ### Quick Export from Menu
-1. Select the layers you want to export
-2. Right-click and select "Plugins > Elemental > Quick Export"
-3. Files will be exported with your saved settings
+1. Select one or more layers in your Figma document
+2. Right-click and select "Plugins > Hot Export > Quick Export"
+3. The files will be downloaded to your computer automatically using your saved settings
 
-### Keyboard Shortcuts
-1. Install the plugin
-2. Go to Figma menu > Preferences > Keyboard Shortcuts
-3. Add a keyboard shortcut (like Command + Option + P) for the desired commands, like "Quick Export"
+### Setting up Keyboard Shortcuts
+Figma allows you to set up custom keyboard shortcuts for plugin commands:
+1. Go to Figma menu > Preferences > Keyboard Shortcuts
+2. Search for "Hot Export"
+3. Add a keyboard shortcut (like Option+E / Alt+E) for the "Quick Export" command
 
-## Copy Fill Colors
-1. Open the plugin panel via "Plugins > Elemental > Open Panel"
-2. Select a single layer with a fill color
-3. Choose your preferred color format (HEX, RGB, RGBA, HSL)
-4. Click "Fill" to copy the color to your clipboard
+### Configure Settings
+1. Open the plugin panel via "Plugins > Hot Export > Open Hot Export"
+2. Select your preferred file type (PNG, JPG, SVG, PDF)
+3. Choose your preferred scale (1x, 2x, 3x, 4x)
+4. Toggle the option to copy to "Export Assets" page if desired
+5. Click "Save Settings" to store your preferences for future use
 
-## Settings
+## How the Export Process Works
 
-The plugin remembers your preferences:
-- **File Format**: PNG, JPG, SVG, or PDF
-- **Scale**: 1x, 2x, 3x, or 4x
-- **Color Format**: HEX, RGB, RGBA, or HSL
-- **Additional Options**: Include stroke, shadow, and text content in exports
-
-## Installation
-
-1. Download the plugin files
-2. In Figma, go to Plugins > Development > Import plugin from manifest
-3. Select the manifest.json file
-4. The plugin will be available in your Plugins menu
+When you click "Export Selection" in the plugin:
+1. The plugin applies your selected export settings to the selected layers
+2. The plugin exports each layer and sends the data to your browser
+3. Files are automatically downloaded to your computer's default download location
+4. Each file is named using the layer name and export settings (e.g., `layer_name_2x.png`)
 
 ## Development
 
